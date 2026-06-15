@@ -31,6 +31,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 ### ✅ Do:
 - Keep components small (<200 lines)
 - Use TypeScript strictly (no `any` without comment)
+- Use the `@/*` alias for absolute imports
+- Style with Tailwind classes only
+- Avoid custom CSS (no `.css` files or `<style>` blocks beyond `globals.css`)
 - Test in browser before committing
 
 ### ❌ Don't:
