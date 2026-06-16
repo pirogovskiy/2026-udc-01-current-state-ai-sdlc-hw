@@ -16,6 +16,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 - `npm run dev` — Start dev server (http://localhost:3000)
 - `npm run build` — Production build
+- `npm run test` — Run tests
 - `npm start` — Run production server
 
 ## Conventions

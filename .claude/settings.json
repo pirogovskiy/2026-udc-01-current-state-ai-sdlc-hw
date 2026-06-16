@@ -22,8 +22,7 @@
       "*.log",
       "npm-debug.log*",
       "logs/**",
-      "public/**/*.svg",
-      "README.md"
+      "public/**/*.svg"
     ]
   }
 }
