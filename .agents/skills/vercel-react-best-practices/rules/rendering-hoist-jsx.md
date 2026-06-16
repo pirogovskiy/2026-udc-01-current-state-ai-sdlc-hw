@@ -9,17 +9,17 @@ tags: rendering, jsx, static, optimization
 
 Extract static JSX outside components to avoid re-creation.
 
-**Incorrect (recreates element every render):**
+**Incorrect (recreates JSX every render):**
 
 ```tsx
-function LoadingSkeleton() {
-  return <div className="animate-pulse h-20 bg-gray-200" />
-}
-
 function Container() {
+  const loadingSkeleton = (
+    <div className="animate-pulse h-20 bg-gray-200" />
+  )
+  
   return (
     <div>
-      {loading && <LoadingSkeleton />}
+      {loading && loadingSkeleton}
     </div>
   )
 }

@@ -3,11 +3,13 @@ title: Deduplicate Global Event Listeners
 impact: LOW
 impactDescription: single listener for N components
 tags: client, swr, event-listeners, subscription
+dependencies:
+  - swr
 ---
 
 ## Deduplicate Global Event Listeners
 
-Use `useSWRSubscription()` to share global event listeners across component instances.
+Use `useSWRSubscription()` to share global event listeners across component instances. This requires the `swr` package: `npm install swr`.
 
 **Incorrect (N instances = N listeners):**
 

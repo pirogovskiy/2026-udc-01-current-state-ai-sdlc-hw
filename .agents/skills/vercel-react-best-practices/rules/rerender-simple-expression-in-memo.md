@@ -33,3 +33,5 @@ function Header({ user, notifications }: Props) {
   // return some markup
 }
 ```
+
+Reference: [React useMemo](https://react.dev/reference/react/useMemo)

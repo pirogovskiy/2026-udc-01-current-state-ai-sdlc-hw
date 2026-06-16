@@ -35,7 +35,7 @@ function SearchResults() {
 }
 ```
 
-**Correct (useTransition with built-in pending state):**
+**Correct (useTransition with built-in pending state and error handling):**
 
 ```tsx
 import { useTransition, useState } from 'react'
@@ -43,15 +43,21 @@ import { useTransition, useState } from 'react'
 function SearchResults() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
+  const [error, setError] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
 
   const handleSearch = (value: string) => {
     setQuery(value) // Update input immediately
+    setError(null) // Clear previous errors
     
     startTransition(async () => {
-      // Fetch and update results
-      const data = await fetchResults(value)
-      setResults(data)
+      try {
+        // Fetch and update results
+        const data = await fetchResults(value)
+        setResults(data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Search failed')
+      }
     })
   }
 
@@ -59,6 +65,7 @@ function SearchResults() {
     <>
       <input onChange={(e) => handleSearch(e.target.value)} />
       {isPending && <Spinner />}
+      {error && <div className="text-red-600">{error}</div>}
       <ResultsList results={results} />
     </>
   )

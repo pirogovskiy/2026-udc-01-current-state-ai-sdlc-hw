@@ -1,4 +1,4 @@
-import ShoppingList from '@/app/components/ShoppingList';
+import ShoppingList from '@/components/ShoppingList';
 
 export default function Home() {
   return (

@@ -7,14 +7,14 @@ tags: rendering, css, content-visibility, long-lists
 
 ## CSS content-visibility for Long Lists
 
-Apply `content-visibility: auto` to defer off-screen rendering.
+Apply `content-visibility: auto` to defer off-screen rendering. See [MDN content-visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility) for more details.
 
 **CSS:**
 
 ```css
 .message-item {
   content-visibility: auto;
-  contain-intrinsic-size: 0 80px;
+  contain-intrinsic-size: 0 80px; /* Adjust height based on your content dimensions */
 }
 ```
 

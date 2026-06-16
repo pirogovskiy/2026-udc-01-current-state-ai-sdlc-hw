@@ -41,4 +41,6 @@ function Profile({ user, loading }: Props) {
 }
 ```
 
-**Note:** If your project has [React Compiler](https://react.dev/learn/react-compiler) enabled, manual memoization with `memo()` and `useMemo()` is not necessary. The compiler automatically optimizes re-renders.
+**Note:** If your project has [React Compiler](https://react.dev/learn/react-compiler) enabled (React 19.2+), manual memoization with `memo()` and `useMemo()` is not necessary. The compiler automatically optimizes re-renders. In React 19+, `ref` is also provided as a regular prop to function components, eliminating the need for `forwardRef()` while `memo()` remains necessary for render optimization.
+
+Reference: [React memo()](https://react.dev/reference/react/memo)
